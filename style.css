@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    gap: 0.5rem; 
+  }
+  
+  .nav-profile-pic {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%; /* round shape */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* soft shadow */
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #0077ff;
+  }
+  
+  .home-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 6rem 2rem;
+    text-align: center;
+  }
+  
+  .profile-pic {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  .about-section, .projects-section, .contact-section {
+    padding: 5rem 10%;
+    text-align: center;
+  }
+  
+  .skills-section {
+    padding: 5rem 10%;
+    text-align: center;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .skill-card {
+    perspective: 1000px;
+  }
+  
+  .skill-card-inner {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+  }
+  
+  .skill-card:hover .skill-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .skill-card-front, .skill-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .skill-card-front {
+    background: white;
+  }
+  
+  .skill-card-front p {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #555;
+  }
+  
+  .skill-card-back {
+    background: white;
+    color: black;
+    transform: rotateY(180deg);
+  }
+  
+  .skill-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+  }
+  
+  
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .project-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .contact-info i {
+    color: #0077ff;
+    margin-right: 8px;
+  }
+  
+  .section-wrapper {
+    background: rgba(255, 255, 255, 0.6); /* transparent white */
+    padding: 4rem 2rem;
+    border-radius: 20px;
+    margin: 2rem 5%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* optional for glass effect */
+  }
+  
+  .section-content {
+    background: #fff; /* solid white box for text */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  .github-link {
+    text-decoration: none;
+    color: #0077ff;
+    font-weight: bold;
+  }
+  
+  .github-link:hover {
+    text-decoration: underline;
+    color: #005bb5;
+  }  
+  .footer {
+    background: white;
+    padding: 1.5rem 5%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* shadow at top */
+    margin-top: 3rem;
+  }
+  
+  .footer p {
+    margin-bottom: 1rem;
+  }
+  
+  .footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .footer .social-icons a {
+    color: #333;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  .footer .social-icons a:hover {
+    color: #0077ff; /* same blue as nav hover */
+  }
+    
