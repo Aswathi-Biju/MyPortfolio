@@ -92,7 +92,16 @@
     color: #333;
     scroll-behavior: smooth;
   }
-  
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* 👈 Send it to the back */
+}
+
   .navbar {
     display: flex;
     justify-content: space-between;
