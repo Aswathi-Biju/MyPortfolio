@@ -2,21 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+  <div id="particles-js"></div>
   <header class="navbar">
     <div class="logo">
         <img src="logo.jpg" alt="Aswathi Biju" class="nav-profile-pic">
         Aswathi Biju
     </div>
-    <nav>
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>    
+    <nav id="nav">
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -27,21 +36,21 @@
     </nav>
   </header>
 
-  <section id="home" class="home-section" data-aos="fade-up">
+  <section id="home" class="home-section glass-box" data-aos="fade-up">
     <div class="section-wrapper">
     <div class="section-content">
     <div class="home-content">
       <img src="profileimg.png" alt="Aswathi Biju" class="profile-pic">
       <h1>Hello, I'm Aswathi 👋</h1>
-      <p>Programmer Enthusiast | Tech Enthusiast | On a path to explore...</p>
-        <p>Welcome to my portfolio! </p>
+      <p><span id="typed-text"></span></p>
+        <p>Welcome to my portfolio! 😊</p>
         <p>I am a B.Tech CSE student with a passion for technology and innovation. Explore my projects and get to know me better.</p>
     </div>
     </div>
     </div>
   </section>
 
-  <section id="about" class="about-section" data-aos="fade-up">
+  <section id="about" class="about-section glass-box" data-aos="fade-up">
     <div class="section-wrapper">
     <div class="section-content">
     <h2>About Me</h2>
@@ -52,7 +61,7 @@
     </div>
     </section>
 
-    <section id="skills" class="skills-section" data-aos="fade-up">
+    <section id="skills" class="skills-section glass-box" data-aos="fade-up">
         <div class="section-wrapper">
         <div class="section-content">
         <h2>Skills</h2>
@@ -133,7 +142,7 @@
         </div>
       </section>
       
-  <section id="projects" class="projects-section" data-aos="fade-up">
+  <section id="projects" class="projects-section glass-box" data-aos="fade-up">
     <div class="section-wrapper">
     <div class="section-content">
     <h2>Projects</h2>
@@ -160,7 +169,7 @@
     </div>
   </section>
 
-  <section id="contact" class="contact-section" data-aos="fade-up">
+  <section id="contact" class="contact-section glass-box" data-aos="fade-up">
     <div class="section-wrapper">
     <div class="section-content">
     <h2>Contact Me</h2>
@@ -174,6 +183,7 @@
     </div>
   </section>
   
+  <button id="scrollToTopBtn" title="Go to top">↑</button>
 
   <footer class="footer">
     <p>© 2025 <a href="https://github.com/Aswathi-Biju" target="_blank" class="github-link">Aswathi Biju</a>. All rights reserved.</p>
@@ -200,6 +210,58 @@
             });
         });
         }); 
-    </script> 
+      window.addEventListener("load", function(){
+        document.body.classList.add("loaded");
+      });
+      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+  window.addEventListener("scroll", function() {
+    if (window.pageYOffset > 300) {
+      scrollToTopBtn.style.display = "block";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  });
+
+  scrollToTopBtn.addEventListener("click", function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+  
+  var typed = new Typed('#typed-text', {
+    strings: ["A Programmer", "A Tech Enthusiast", "A Learner","A Problem Solver","A Developer","An Innovator","An Explorer","On a journey to learn..."],
+    typeSpeed: 50,
+    backSpeed: 50,
+    backDelay: 1500,
+    loop: true
+  });
+  particlesJS('particles-js',
+    {
+      "particles": {
+        "number": {
+          "value": 80
+        },
+        "size": {
+          "value": 3
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          }
+        }
+      }
+    }
+  );
+  // Close mobile menu after clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('active');
+  });
+});
+
+    </script>
+    
 </body>
 </html>
